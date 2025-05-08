@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  z-index: 50;
+  max-width: 32rem;
+  width: 90%;
+  margin: 1rem;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Voice Button Styles */
+button[data-listening="true"] {
+  @apply bg-red-500 hover:bg-red-600 text-white;
+}
+
+button[data-listening="false"][data-dark="true"] {
+  @apply text-white hover:bg-gray-700;
+}
+
+button[data-listening="false"][data-dark="false"] {
+  @apply text-gray-700 hover:bg-gray-100;
+}
+
